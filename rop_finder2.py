@@ -504,10 +504,10 @@ def PrintGadget(segment_name, gadget):
   Print all of the gadgets we've found
   """
   for inst in gadget:
-    print "%s :\t%s %s" % (hex(inst.address).replace('L',''), 
+    print ("%s :\t%s %s" % (hex(inst.address).replace('L',''), 
                            binascii.hexlify(inst.bytes).ljust(17, ' '),
-                           "%s %s" % (inst.mnemonic, inst.op_str))
-  print '--'
+                           "%s %s" % (inst.mnemonic, inst.op_str)))
+  print ('--')
 
 
 def FindGadgetsWorkerProcess(job_queue, gadget_queue, end_event, semaphore, finder):

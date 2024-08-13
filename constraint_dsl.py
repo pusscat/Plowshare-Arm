@@ -5,7 +5,7 @@ This generates a SQL query string for rop_finder sqlite3 dbs and the specifies
 constraints.
 
 Author: Pete Markowsky <peterm@vodun.org>
-Author: Lurene
+Author: Lurene Grenier <pusscat@gmail.com>
 """
 import types
 import os

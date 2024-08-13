@@ -134,7 +134,7 @@ class CPU(object):
         if instruction_bytes != None and base != None:
             for i in xrange(0, len(instruction_bytes)):
                 nextByte =  z3.BitVecVal(struct.unpack('B', instruction_bytes[i:i+1])[0],8)
-                #print hex(i) + " " + hex(struct.unpack('B', instruction_bytes[i:i+1])[0])
+                #print (hex(i) + " " + hex(struct.unpack('B', instruction_bytes[i:i+1])[0]))
                 self.SetMemory(base+i, 8, nextByte)
 
 
@@ -318,8 +318,8 @@ class CPU(object):
         
         # Alert if unknown value type
         if value == None:
-            print "ERROR - Udefined operand type: " + OP_STRINGS[operand.type] + " val: " + operand.value
-            print "name: " + operand.name + " mem: " + operand.mem
+            print ("ERROR - Udefined operand type: " + OP_STRINGS[operand.type] + " val: " + operand.value)
+            print ("name: " + operand.name + " mem: " + operand.mem)
             quit()
 
         # If shift, then shift the value
@@ -416,10 +416,10 @@ class CPU(object):
         instruction = list(instructions)[0]
 
         if instruction.mnemonic.upper() not in functionTable.keys():
-            print "Unknown instruction: " + instruction.mnemonic
+            print ("Unknown instruction: " + instruction.mnemonic)
             return False
 
-        print hex(curInstAddr) + ": " + instruction.mnemonic.upper()
+        print (hex(curInstAddr) + ": " + instruction.mnemonic.upper())
         if "BKPT" in instruction.mnemonic.upper():
             return False
         functionTable[instruction.mnemonic.upper()](instruction)
@@ -437,7 +437,7 @@ class CPU(object):
         while self.HandleInstructionAtPC() != False and counter < maxInstructions:
             counter += 1
         
-        print "Executed %d instructions" % (counter)
+        print ("Executed %d instructions" % (counter))
 
 
     # INSTRUCTIONS!
