@@ -8,7 +8,7 @@ import ctypes
 import logging
 import multiprocessing
 import os
-import Queue
+import queue
 import sqlite3
 import sys
 import threading
