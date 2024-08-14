@@ -4,3 +4,4 @@ pyzmq==26.1.0
 zmq==0.0.0
 pefile==2023.2.7
 pyelftools==0.31
+configparser==7.0.0
